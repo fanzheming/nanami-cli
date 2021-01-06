@@ -1,0 +1,35 @@
+{
+  "name": "dio-cli",
+  "version": "1.0.0",
+  "description": "一个方便拉取模板的脚手架",
+  "main": "index.js",
+  "bin": {
+    "dio": "./src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanzheming/dio-cli.git"
+  },
+  "keywords": [],
+  "author": "fanzheming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fanzheming/dio-cli/issues"
+  },
+  "homepage": "https://github.com/fanzheming/dio-cli#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.2.1",
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
+    "lodash": "^4.17.20",
+    "log-symbols": "^4.0.0",
+    "ora": "^5.2.0",
+    "shelljs": "^0.8.4",
+    "validate-npm-package-name": "^3.0.0"
+  }
+}
