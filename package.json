@@ -28,8 +28,15 @@
     "inquirer": "^7.3.3",
     "lodash": "^4.17.20",
     "log-symbols": "^4.0.0",
+    "module-alias": "^2.2.2",
     "ora": "^5.2.0",
     "shelljs": "^0.8.4",
     "validate-npm-package-name": "^3.0.0"
+  },
+  "_moduleAliases": {
+    "@": ".",
+    "@config": "config",
+    "@lib": "lib",
+    "@utils": "utils"
   }
 }
