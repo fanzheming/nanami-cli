@@ -3,13 +3,27 @@
 
 // 在最开始注册目录别名 配置在package.json中
 require('module-alias/register')
-const program = require('@lib/createCommander.js')
-const createOptions = require('@lib/options.js')
-const createCommands = require('@lib/commands.js')
+const program = require('commander')
+const {createAction} = require('@lib/actions.js')
+const emoji = require('node-emoji');
+const chalk = require('chalk')
 
-// 创建选项
-createOptions()
-// 创建命令
-createCommands()
- // 在最后解析输入的命令
+program
+    .version('1.0.0')
+    .name('dio')
+    .usage('<command> [options]')
+    .description(chalk.yellowBright.dim(`${emoji.get(':star:')} List options and commands of Dio CLI`))
+    .option('-d, --dest <dest>', 'set target diectory')
+    .on('--help', () => {
+        console.log('\n', emoji.get(':coffee:'), chalk.yellowBright.dim('Let\'s take a break'))
+    })
+
+// 新建项目
+program
+    .command('create <project-name>')
+    .alias('c')
+    .description('create a new project')
+    .action(createAction)
+
+// 在最后解析输入的命令
 program.parse(process.argv)
