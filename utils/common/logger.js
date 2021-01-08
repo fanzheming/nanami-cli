@@ -1,7 +1,9 @@
 
 const chalk = require('chalk')
 const logSymbols = require('log-symbols');
+const ora = require('ora')
 
+const spinner = ora()
 
 const logError = (content) => {
     console.error(logSymbols.error, chalk.redBright.dim(content));

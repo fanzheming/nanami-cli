@@ -3,21 +3,17 @@
 
 // 在最开始注册目录别名 配置在package.json中
 require('module-alias/register')
-const program = require('@utils/commander')
+const program = require('commander')
 const { createAction, testAction } = require('@lib/actions.js')
-const emoji = require('node-emoji');
 const chalk = require('chalk')
 
 program
-    .version('1.0.0')
+    .version(`dio-cli ${require('../package').version}`)
     .name('dio')
     .usage('<command> [options]')
-    .description(chalk.yellowBright.dim(`${emoji.get(':star:')} List options and commands of Dio CLI`))
+    .description('create a new project by dio-cli')
     .option('-d, --dest <dest>', 'set target diectory')
-    .option('-f, --force', 'force excute')
-    .on('--help', () => {
-        console.log('\n', emoji.get(':coffee:'), chalk.yellowBright.dim('Let\'s take a break'))
-    })
+    .option('-f, --force', 'Overwrite target directory if it exists')
 
 // 新建项目
 program
