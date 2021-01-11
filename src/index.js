@@ -4,8 +4,7 @@
 // 在最开始注册目录别名 配置在package.json中
 require('module-alias/register')
 const program = require('commander')
-const { createAction, testAction } = require('@lib/actions.js')
-const chalk = require('chalk')
+const { createAction, testAction } = require('@lib/actions')
 
 program
     .version(`dio-cli ${require('../package').version}`)
