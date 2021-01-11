@@ -1,30 +1,34 @@
 
 const chalk = require('chalk')
 const logSymbols = require('log-symbols');
-const ora = require('ora')
 
-const spinner = ora()
-
-const logError = (content) => {
-    console.error(logSymbols.error, chalk.redBright.dim(content));
+exports.error = msg => {
+    console.error(logSymbols.error, chalk.redBright.dim(msg))
+    if (msg instanceof Error) {
+        console.error(msg.stack)
+    }
 }
 
-const logWarn = (content) => {
-    console.warn(logSymbols.warning, chalk.yellowBright.dim(content));
+exports.warn = msg => {
+    console.warn(logSymbols.warning, chalk.yellowBright.dim(msg))
 }
 
-const logSuccess = (content) => {
-    console.info(logSymbols.success, chalk.greenBright.dim(content));
+exports.done = msg => {
+    console.info(logSymbols.success, chalk.greenBright.dim(msg))
 }
 
-const logInfo = (content) => {
-    console.info(logSymbols.info, chalk.whiteBright.dim(content));
+exports.info = msg => {
+    console.info(logSymbols.info, chalk.whiteBright.dim(msg))
 }
 
-
-module.exports = {
-    logError,
-    logWarn,
-    logSuccess,
-    logInfo
+exports.clearConsole = title => {
+    if (process.stdout.isTTY) {
+        const blank = '\n'.repeat(process.stdout.rows)
+        console.log(blank)
+        readline.cursorTo(process.stdout, 0, 0)
+        readline.clearScreenDown(process.stdout)
+        if (title) {
+            console.log(title)
+        }
+    }
 }
