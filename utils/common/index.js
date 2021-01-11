@@ -1,8 +1,7 @@
 // 出口
 [
     'exit',
-    'logger',
-    'temp'
+    'logger'
 ].forEach(m => {
     Object.assign(exports, require(`./${m}`))
 })

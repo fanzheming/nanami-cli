@@ -1,6 +1,7 @@
 
 const chalk = require('chalk')
 const logSymbols = require('log-symbols');
+const readline = require('readline')
 
 exports.error = msg => {
     console.error(logSymbols.error, chalk.redBright.dim(msg))
