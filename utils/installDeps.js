@@ -1,5 +1,4 @@
 const shell = require('shelljs')
-const {spawn} = require('child_process')
 const spinner = require('ora')()
 const logSymbols = require('log-symbols')
 const chalk = require('chalk')
@@ -7,20 +6,13 @@ const { hasProjectYarn } = require('./common/env')
 
 
 exports.installDeps = async () => {
-    spinner.text = 'Initializing dependency package...'
+    spinner.text = 'Initializing dependencies...'
     spinner.start()
     const packageManager = hasProjectYarn() ? 'yarn' : 'npm'
-    const {stderr} = await execInstallCommand(`${packageManager} install`)
-    if(stderr){
-        spinner.stopAndPersist({
-            symbol: logSymbols.error,
-            text: `${chalk.redBright.dim('Initialization dependency package failed')}`
-        })
-        return
-    }
+    await execInstallCommand(`${packageManager} install`)
     spinner.stopAndPersist({
         symbol: logSymbols.success,
-        text: `${chalk.greenBright.dim('Initialization dependency package successful')}`
+        text: `${chalk.greenBright.dim('Initialization dependencies complete')}`
     })
 }
 

@@ -24,6 +24,26 @@
 // const shell = require('shelljs')
 // shell.cd('test01')
 // console.log(shell.pwd());
-const str = 'WARNING1'
-const a = /warning/i.test(str)
-console.log(a);
+// const str = 'WARNING1'
+// const a = /warning/i.test(str)
+// console.log(a);
+
+// function line (str, len) {
+//     console.log(new Array(Math.max(1, len - str.length)));
+//     var line = new Array(Math.max(1, len - str.length)).join('-');
+//     return line;
+// }
+// console.log(line('xxxxx',9));
+const data = require('./config/repo.json')
+const test = () => {
+    const maxLength = Math.max(...Object.keys(data).map(key => key.length))
+    for (const [key, value] of Object.entries(data)) {
+        const length = key.length
+        if(length < maxLength) {
+            console.log(key + ' ' + '-'.repeat(maxLength-length) + '--- ' + value)
+        } else {
+            console.log(key + ' --- ' + value)
+        }
+    }
+}
+test()
