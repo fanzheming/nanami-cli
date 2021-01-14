@@ -1,5 +1,5 @@
 {
-  "name": "dio-cli",
+  "name": "diodark-cli",
   "version": "1.0.0",
   "description": "Command line interface for rapid development",
   "main": "index.js",
