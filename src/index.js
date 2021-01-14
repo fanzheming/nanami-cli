@@ -4,7 +4,7 @@
 // 在最开始注册目录别名 配置在package.json中
 require('module-alias/register')
 const program = require('commander')
-const { createAction, listAction,  testAction } = require('@lib/actions')
+const { createAction, listRepoAction, addRepoAction, removeRepoAction, testAction } = require('@lib/actions')
 
 program
     .version(`dio-cli ${require('../package').version}`)
@@ -21,16 +21,28 @@ program
     .description('create a new project')
     .action(createAction)
 
-// 列出模板仓库
+// 列出所有模板仓库
 program
-.command('list')
-.alias('ls')
-.description('list all boilerplate repository')
-.action(listAction)
+    .command('list')
+    .alias('ls')
+    .description('list all boilerplate repositories')
+    .action(listRepoAction)
+
+// 添加自定义模板仓库
+program
+    .command('add <name> <url>')
+    .description('add a custom boilerplate repository')
+    .action(addRepoAction)
+
+// 删除自定义模板仓库
+program
+    .command('remove <name>')
+    .description('remove a custom boilerplate repository')
+    .action(removeRepoAction)
 
 // 新建项目
 program
-    .command('test <a>')
+    .command('test <a> [b...]')
     .description('测试')
     .action(testAction)
 
