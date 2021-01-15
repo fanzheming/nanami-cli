@@ -7,7 +7,7 @@ const program = require('commander')
 const { createAction, listRepoAction, addRepoAction, removeRepoAction, testAction } = require('@lib/actions')
 
 program
-    .version(`dio-cli ${require('../package').version}`)
+    .version(require('../package').version)
     .name('dio')
     .usage('<command> [options]')
     .description('create a new project by dio-cli')
