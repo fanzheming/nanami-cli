@@ -28,6 +28,6 @@ exports.createQuestionList = [
         type: 'input',
         name: 'description',
         message: 'Description',
-        default: 'project created by dio-cli',
+        default: `project created by ${require('../package.json').name}`,
     }
 ]

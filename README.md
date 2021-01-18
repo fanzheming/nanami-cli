@@ -1,4 +1,4 @@
-# Dio-CLI
+# Nanami-CLI
 
 > 🛠️选择模板项目下载到本地并且初始化依赖。
 
@@ -9,7 +9,7 @@
 ## 安装
 
 ```bash
-npm install diodark-cli -g
+npm install nanami-cli -g
 ```
 
 ## 使用
@@ -17,10 +17,10 @@ npm install diodark-cli -g
 1. **创建项目**
 
 	```bash
-	$ dio create <project-name>
+	$ nanami create <project-name>
 	
 	example:
-	$ dio create my-project
+	$ nanami create my-project
 	```
 
 	> ​	tips：
@@ -31,16 +31,16 @@ npm install diodark-cli -g
 2. **查看所有模板（预设模板+自定义模板）**
 
 	```bash
-	$ dio list or $ dio ls
+	$ nanami list or $ nanami ls
 	```
 
 3. **新增自定义模板**
 
 	```bash
-	$ dio add <name> <url>
+	$ nanami add <name> <url>
 	
 	example:
-	$ dio add vue-admin https://github.com/fanzheming/vue-admin.git#master
+	$ nanami add vue-admin https://github.com/fanzheming/vue-admin.git#master
 	```
 
 	> ​	tips：`#`后需要跟上分支名。
@@ -48,10 +48,10 @@ npm install diodark-cli -g
 4. **删除自定义模板**
 
 	```bash
-	$ dio remove <name>
+	$ nanami remove <name>
 	
 	example:
-	$ dio remove vue-admin
+	$ nanami remove vue-admin
 	```
 
 	> ​	tips：只可删除自定义模板，预设模板不可删除。
@@ -59,9 +59,9 @@ npm install diodark-cli -g
 5. **其它**
 
 	```bash
-	$ dio --version or dio -V        // 查看版本号
+	$ nanami --version or nanami -V        // 查看版本号
 	
-	$ dio --help                     // 获取帮助信息
+	$ nanami --help                     // 获取帮助信息
 	```
 
 	

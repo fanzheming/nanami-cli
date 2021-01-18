@@ -1,10 +1,10 @@
 {
-  "name": "diodark-cli",
+  "name": "nanami-cli",
   "version": "1.0.0",
   "description": "Command-line interface tool for creating project",
   "main": "index.js",
   "bin": {
-    "dio": "bin/index.js"
+    "nanami": "bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

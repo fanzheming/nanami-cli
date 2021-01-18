@@ -7,11 +7,10 @@ const program = require('commander')
 const { createAction, listRepoAction, addRepoAction, removeRepoAction, testAction } = require('@lib/actions')
 
 program
-    .version(require('../package').version)
-    .name('dio')
+    .version(`v${require('../package').version}`)
+    .name('nanami')
     .usage('<command> [options]')
-    .description('create a new project by dio-cli')
-    .option('-d, --dest <dest>', 'set target diectory')
+    .description('create project by nanami-cli')
     .option('-f, --force', 'Overwrite target directory if it exists')
 
 // 新建项目
