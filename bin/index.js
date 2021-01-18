@@ -40,10 +40,10 @@ program
     .description('remove a custom boilerplate repository')
     .action(removeRepoAction)
 
-// 新建项目
+// 测试
 program
     .command('test <a> [b...]')
-    .description('测试')
+    .description('test,just ignore it')
     .action(testAction)
 
 // 在最后解析输入的命令
